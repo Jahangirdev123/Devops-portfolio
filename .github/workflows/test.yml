@@ -1,0 +1,29 @@
+name: CI - Test and Lint
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:  # PR banate hi chalega
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Code download karo
+        uses: actions/checkout@v4
+
+      - name: Node setup karo
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'  # Isse npm install fast hoga
+
+      - name: Dependencies install
+        run: npm ci
+
+      - name: Lint chalao
+        run: npm run lint
+
+      - name: Test chalao
+        run: npm test -- --coverage
