@@ -1,7 +1,10 @@
-name:hello
-on:push ["main"]
-jobs:
-run:
-runs-on:ubuntu-latest
-steps:
--run:echo"hello"
+name:	hello
+
+on:
+   push:
+	branches: ["main"]
+  jobs:
+  run:
+	runs-on: ubuntu-latest
+	steps:
+	- run: echo"hello"
