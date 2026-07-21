@@ -1,17 +1,7 @@
-name: CI - Test and Lint
-
-on:
-  push:
-    branches: [ "main", "dev" ]
-  pull_request:  # PR banate hi chalega
-
+name:hello
+on:push ["main"]
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Code download karo
-        uses: actions/checkout@v4
-      - name: Hello bolo
-        run: echo "Assalamualaikum! ek or updated code"
-   
+run:
+runs-on:ubuntu-latest
+steps:
+-run:echo"hello"
