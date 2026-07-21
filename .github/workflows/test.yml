@@ -2,16 +2,10 @@ name: Hello-World
 
 on:
   push:
-    branches:["main"]
+    branches: ["main"]
 jobs:
-  print-messagge:
-    runs-on:ubuntu-latest
+  print-message:
+    runs-on: ubuntu-latest
     steps:
-      - name: Step 1 -Code checkout karo
-	uses: actions/checkout@v4
-
-      - name: Step 2 -Hello World
-	run: echo "hello"
-
-      - name: Step 3  - Apna name
-	run:  echo "Hello World"
+      - name: Step 2
+        run: echo "hello"
