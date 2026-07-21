@@ -1,10 +1,22 @@
-name:	hello
+name: Hello World
 
-on:
-   push:
-	branches:
-  jobs:
-  run:
-	runs-on: ubuntu-latest
-	steps:
-	- run: echo"hello"
+on: 
+  push:
+    branches: ["main"]
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Step 1 - Code checkout karo
+        uses: actions/checkout@v4
+
+      - name: Step 2 - Hello bolo
+        run: echo "Hello World"
+
+      - name: Step 3 - Apna naam bolo
+        run: echo "My name is ${{ github.actor }}"
+
+      - name: Step 4 - Date batao
+        run: date
