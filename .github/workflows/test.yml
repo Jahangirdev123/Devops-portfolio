@@ -1,5 +1,4 @@
-name: Hello-World
-
+name: Hello World
 on:
   push:
     branches: ["main"]
@@ -7,5 +6,4 @@ jobs:
   print-message:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 2
-        run: echo "hello"
+      - run: echo "hello World"
