@@ -1,16 +1,28 @@
 name: Mybuild
 on: 
   push:
-    branches: [ main ] # 1. Ye add kar do warna har branch par chalega
+    branches: [ main ]
+  workflow_dispatch: # manual run ka button bhi
 
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: {node-version: '24'} # 2. Node 23 mat lo. NextJS ke liye 20 LTS best hai
-      - run: npm ci
-      - run: npm run lint
-        continue-on-error: true # Lint fail ho to bhi build chale
-      - run: npm run build
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node Latest
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '22'  # ya '24' bhi laga sakte ho
+          cache: 'npm' # npm ci fast ho jayega
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Build NextJS
+        run: npm run build
