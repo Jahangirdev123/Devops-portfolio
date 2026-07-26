@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node Latest
         uses: actions/setup-node@v4
         with: 
-          node-version: '22'  # ya '24' bhi laga sakte ho
+          node-version: '24'  # ya '24' bhi laga sakte ho
           cache: 'npm' # npm ci fast ho jayega
 
       - name: Install deps
