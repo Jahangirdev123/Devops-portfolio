@@ -1,10 +1,8 @@
-name : MyUpdate
-on: 
-  push: 
+name: MyApp
+on:
+ push:
 jobs:
- run:
-  runs-on: ubuntu-latest
-  steps:
-      - run: echo "Mera kam hai"
-      - run: echo "Mere Branch Hai"
-      
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Iam Running"
