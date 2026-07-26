@@ -1,12 +1,10 @@
-name: Myapp
-on:
-  push:
-    branches: ["main"]
+name : MyUpdate
+on: 
+  push: 
 jobs:
-  print-message: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step 1
-        uses: actions/checkout@v4
-      - name: Step 2
-        run: echo "Hello World"
+ run:
+  runs-on: ubuntu-latest
+  steps:
+      - run: echo "Mera kam hai"
+      - run: echo "Mere Branch Hai"
+      
